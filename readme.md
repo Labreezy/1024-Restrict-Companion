@@ -1,11 +1,11 @@
 # SA2 Hunting Training Mod
 Companion mod for Sonic Adventure 2 that restricts set RNG as specified
 
-##Requirements: 
+## Requirements: 
 
 Install the hunter tourney mod by Prahaha through the SA2 mod manager [(download here)](https://github.com/Ngolinvaux/HunterTourney/releases/tag/v1.1.1)
 
-##Instructions:
+## Instructions:
 
 Provide in sets.txt (in the executable directory) a group of set IDs from a 1024 sheet of your choice, each ID separated by a new line.  You can copy+paste from the leftmost column of the 1024 sheet from this google drive folder [here](https://drive.google.com/drive/folders/1RW00L3s5yO7mS6Cf8DkzT8poYZKVW4Fl) for ease of use.
 
