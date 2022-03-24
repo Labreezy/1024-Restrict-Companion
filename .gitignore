@@ -1,0 +1,7 @@
+.idea/*
+build/*
+dist/*
+env/*
+__pycache__
+*.spec
+sets.txt
