@@ -11,6 +11,6 @@ Provide in sets.txt (in the executable directory) a group of set IDs from a 1024
 
 Open the game with the tourney mod installed, then run the companion executable **in that order**.  Enter your preferred safe color even if you aren't doing Security Hall, and the companion will be active.
 
-The provided sets.txt in the release gives you 4 different "a box surrounded by lights" sets in Mad Space, use that to test the mod.
+The provided sets.txt in the release gives you a few sets with "a golden circle on a red circle" as your first piece in wild canyon, but only on first load.
 
 If you have any further questions or need technical support, contact @Labrys#2006 on discord.
