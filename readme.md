@@ -3,7 +3,7 @@ Companion mod for Sonic Adventure 2 that restricts set RNG as specified
 
 ## Requirements: 
 
-Install the hunter tourney mod by Prahaha through the SA2 mod manager [(download here)](https://github.com/Ngolinvaux/HunterTourney/releases/tag/v1.1.1)
+Install the hunter tourney mod by Prahaha + IDGeek through the SA2 mod manager [(download here)](https://github.com/Ngolinvaux/HunterTourney/releases/tag/v1.1.1)
 
 ## Instructions:
 
