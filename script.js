@@ -1,4 +1,4 @@
-var base = Module.findBaseAddress('sonic2app.exe');
+    var base = Module.findBaseAddress('sonic2app.exe');
 var orderbase = Module.findBaseAddress('order.dll');
 //constants
 const HUNT_STAGE_IDS = [5,7,8,16,18,25,26,32,44];
@@ -53,7 +53,7 @@ Interceptor.attach(fnsetstate, {
            var cseed = nextseedptr.readU16();
            cseed += 0x1327;
            cseed = cseed % 65535;
-           nextseedptr.writeU16(cseed);
+           nextseedptr.writeU16(cseed); 
            console.log("Wrote new state");
        } else {
            if(SETS_TO_PRACTICE.length > 0){

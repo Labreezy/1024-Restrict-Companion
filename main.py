@@ -18,7 +18,7 @@ if __name__ == '__main__':
     msgdat = int(safecolor) - 1
     script.post({"type": "safe","id": msgdat})
     if(osp.exists("sets.txt")):
-        txtlines = open("sets.txt").readlines()
+        txtlines = open("sets.txt").read().strip().splitlines()
         ids = list(map(int, txtlines))
         script.post({"type": "sets","sets": ids})
     else:
