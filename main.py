@@ -14,9 +14,14 @@ if __name__ == '__main__':
     print("2 - Yellow")
     print("3 - Red")
     safecolor = input("Choice:")
+    print("Choose to pick sets with or without replacement")
+    print("1 - With replacement [default]")
+    print("0 - Without replacement")
+    replacement = int(input("Choice:") or 1)
     print("Ready to go!")
     msgdat = int(safecolor) - 1
     script.post({"type": "safe","id": msgdat})
+    script.post({"type": "replacement", "data": replacement})
     if(osp.exists("sets.txt")):
         txtlines = open("sets.txt").read().strip().splitlines()
         ids = list(map(int, txtlines))
