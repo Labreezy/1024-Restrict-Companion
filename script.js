@@ -18,6 +18,9 @@ var safeset = false;
 var lifeptr = base.add(0x134b024);
 //upgrade
 var tscopeaddr = base.add(0x19eb31a);
+//Replacement/no replacement handling
+var replacement = true;
+var sets_to_sample = [];
 //exit game safety
 /*var entermainmenuptr = base.add(0x284486);
 var levelcount = -1;
@@ -40,8 +43,13 @@ recv("safe", function(msg){
     safe = msg.id;
 });
 
+recv("replacement", function(msg){
+    replacement = Boolean(msg.data);
+});
+
 recv("sets", function(msg){
     SETS_TO_PRACTICE = msg.sets;
+    sets_to_sample = [...SETS_TO_PRACTICE];
     console.log("Received sets");
 });
 //death restart rng
@@ -57,9 +65,19 @@ Interceptor.attach(fnsetstate, {
            console.log("Wrote new state");
        } else {
            if(SETS_TO_PRACTICE.length > 0){
-               var rand_idx = Math.floor(Math.random() * SETS_TO_PRACTICE.length);
-               nextseedptr.writeU16(SETS_TO_PRACTICE[rand_idx]);
-               console.log("Wrote " + SETS_TO_PRACTICE[rand_idx]);
+               if (replacement) {
+                    var rand_idx = Math.floor(Math.random() * SETS_TO_PRACTICE.length);
+                    nextseedptr.writeU16(SETS_TO_PRACTICE[rand_idx]);
+                    console.log("Wrote " + SETS_TO_PRACTICE[rand_idx]);
+               } else {
+                    var rand_idx = Math.floor(Math.random() * sets_to_sample.length);
+                    nextseedptr.writeU16(sets_to_sample[rand_idx]);
+                    console.log("Wrote " + sets_to_sample[rand_idx]);
+                    sets_to_sample.splice(rand_idx, 1);
+                    if (sets_to_sample.length == 0) {
+                        sets_to_sample = [...SETS_TO_PRACTICE];
+                    }
+               }
            }
        }
        //lives
