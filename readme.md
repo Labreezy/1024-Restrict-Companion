@@ -14,3 +14,12 @@ Open the game with the tourney mod installed, then run the companion executable 
 The provided sets.txt in the release gives you a few sets with "a golden circle on a red circle" as your first piece in wild canyon, but only on first load.
 
 If you have any further questions or need technical support, contact @Labrys#2006 on discord.
+
+### Building
+
+```commandline
+pip install -r requirements.txt
+pyinstaller -D -n 1024_companion main.py && copy script.js .\dist\1024_companion\
+```
+
+Alternatively you can manually copy script.js to the executable folder in ``.\dist\``
